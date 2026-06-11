@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DigiCoders - YouTube Channel Clone</title>
+  <style>
+    * { margin:0; padding:0; box-sizing: border-box; font-family:'Segoe UI',Arial,sans-serif; }
+    body { background:#f9f9f9; }
+    header {
+      background:#fff; border-bottom:1px solid #e0e0e0;
+      display:flex; align-items:center; justify-content:space-between;
+      padding:10px 20px; position:sticky; top:0; z-index:100;
+    }
+    .logo { font-size:20px; font-weight:bold; color:#cc0000; }
+    .search-bar {
+      flex:1; max-width:600px;
+      margin:0 20px;
+      display:flex; border:1px solid #ccc; border-radius:2px;
+      overflow:hidden;
+    }
+    .search-bar input {
+      flex:1; padding:8px;
+      border:none; outline:none;
+    }
+    .search-bar button {
+      padding:8px 16px;
+      background:#f8f8f8; border:none;
+      cursor:pointer;
+    }
+    .header-icons a {
+      margin-left:16px;
+      font-size:20px;
+      text-decoration:none;
+      color:#606060;
+    }
+
+    .channel-header {
+      background:#fff; padding:20px;
+      display:flex; align-items:center;
+      border-bottom:1px solid #e0e0e0;
+    }
+    .channel-avatar {
+      width:80px; height:80px;
+      border-radius:50%; background:#ff8a8a;
+      margin-right:20px;
+    }
+    .channel-info h1 {
+      font-size:24px; margin-bottom:4px;
+    }
+    .channel-info span {
+      color:#606060; font-size:14px;
+    }
+    .subscribe-btn {
+      margin-left:auto;
+      padding:10px 16px;
+      background:#cc0000;
+      color:#fff;
+      font-weight:bold;
+      border:none;
+      border-radius:2px;
+      cursor:pointer;
+    }
+
+    .nav-menu {
+      background:#fff; padding:0 20px;
+      border-bottom:1px solid #e0e0e0;
+    }
+    .nav-menu ul {
+      display:flex; list-style:none;
+    }
+    .nav-menu li {
+      margin-right:24px;
+    }
+    .nav-menu a {
+      display:block;
+      padding:16px 0;
+      text-decoration:none;
+      color:#606060;
+      font-weight:500;
+    }
+    .nav-menu a.active {
+      color:#000; border-bottom:2px solid #cc0000;
+    }
+
+    .videos-grid {
+      padding:20px;
+      display:grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px,1fr));
+      gap:20px;
+    }
+    .video-card {
+      background:#fff;
+      border-radius:4px;
+      overflow:hidden;
+      box-shadow:0 1px 3px rgba(0,0,0,0.1);
+      cursor:pointer;
+    }
+    .video-thumb {
+      width:100%; height:170px;
+      background:#ddd;
+    }
+    .video-info {
+      padding:12px;
+    }
+    .video-info h3 {
+      font-size:16px;
+      margin-bottom:6px;
+      line-height:1.2;
+      color:#000;
+    }
+    .video-info p {
+      font-size:14px;
+      color:#606060;
+    }
+
+    footer {
+      text-align:center;
+      padding:20px;
+      color:#909090;
+      font-size:14px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="logo">YouTube</div>
+    <div class="search-bar">
+      <input type="text" placeholder="Search"/>
+      <button>🔍</button>
+    </div>
+    <div class="header-icons">
+      <a href="#">🎥</a>
+      <a href="#">🔔</a>
+      <a href="#">👤</a>
+    </div>
+  </header>
+
+  <!-- Channel Info -->
+  <section class="channel-header">
+    <div class="channel-avatar"><img src="digicoderlogo.jpg" width="80px" height="80px"/></div>
+    <div class="channel-info">
+      <h1>DigiCoders</h1>
+      <span>1.2M subscribers • 150 videos</span>
+    </div>
+    <button class="subscribe-btn">SUBSCRIBE</button>
+  </section>
+
+  <!-- Nav Menu -->
+  <nav class="nav-menu">
+    <ul>
+      <li><a class="active" href="#">HOME</a></li>
+      <li><a href="#">VIDEOS</a></li>
+      <li><a href="#">SHORTS</a></li>
+      <li><a href="#">PLAYLISTS</a></li>
+      <li><a href="#">COMMUNITY</a></li>
+      <li><a href="#">ABOUT</a></li>
+    </ul>
+  </nav>
+
+  <!-- Videos Grid -->
+  <main class="videos-grid">
+    <!-- Repeat video-card for each video -->
+    <div class="video-card">
+      <div class="video-thumb"><a href="https://youtu.be/XwweJEK9RsQ"><img src="d1.png"  width="400px" height="170px"/></a></div>
+      <div class="video-info">
+        <h3>City Talk With RJ Karishma | Aaj Baat karenge IT Experts Ke Sath | DigiCoders Technologies</h3>
+        <p>120K views • 2 weeks ago</p>
+      </div>
+    </div>
+    <div class="video-card">
+      <div class="video-thumb"><a href="https://www.youtube.com/watch?v=OFzA9muki7g"><img src="d2.jpeg"  width="400px" height="170px"/></a></div>
+      <div class="video-info">
+        <h3>CSS Flexbox Crash Course</h3>
+        <p>95K views • 1 month ago</p>
+      </div>
+    </div>
+    <div class="video-card">
+      <div class="video-thumb"><a href="https://www.youtube.com/watch?v=kv8AmiUNGLg"><img src="d3.jpeg"  width="400px" height="170px"/></a></div>
+      <div class="video-info">
+        <h3>React Tutorial for Beginners</h3>
+        <p>200K views • 3 weeks ago</p>
+      </div>
+    </div>
+    <div class="video-card">
+      <div class="video-thumb"><a href="https://www.youtube.com/watch?v=_faNQYwao3Q"><img src="d4.jpeg"  width="400px" height="170px"/></a></div>
+      <div class="video-info">
+        <h3>Python in 100 Seconds</h3>
+        <p>150K views • 1 month ago</p>
+      </div>
+    </div>
+    <!-- ... aur bhi cards add kar sakte hain -->
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    © 2025 DigiCoders Channel Clone. Designed with ❤️ by You.
+  </footer>
+</body>
+</html>

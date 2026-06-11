@@ -1,0 +1,111 @@
+<html>
+    <head>
+        <style>
+            h1
+            {
+                text-align: center;
+            }
+            #todolist
+            {
+                width: 300px;
+                padding: 20px;
+                border-radius: 20px;
+                box-shadow: 0px 0px 50px rgb(0, 0, 0);
+                margin: 0px auto;
+            }
+            #todolist div
+            {
+                padding: 5px;
+                border-left: 2px solid rgb(34, 1, 255);
+                margin-bottom: 5px;
+                background-color: rgb(226, 181, 255);
+            }
+            #savebtn
+            {
+                padding: 5px;
+                background-color: #0101f7;
+                color: white;
+            }
+            .delete
+            {
+                font-size: 10px;
+                background-color: rgb(0, 17, 255);
+                border: 1px solid rgb(255, 255, 255);
+                height: 20px;
+                width: 20px;
+                border-radius: 10px;
+                float: right;
+                color: white;
+            }
+            body
+            {
+                background-image: url('img.png');
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+            #savebtn:hover
+            {
+                transform: scale(1.1);
+                background-color: rgb(0, 255, 170);
+                color: black;
+                transition: 0.2s;
+            }
+            .delete:hover
+            {
+                transform: scale(1.1);
+                background-color: rgb(255, 0, 0);
+                color: rgb(255, 255, 255);
+                transition: 0.2s;
+
+            }
+            #t1:hover
+            {
+                transform: scale(1.1);
+                background-color: rgb(221, 255, 244);
+                color: black;
+                transition: 0.2s;
+            }
+            #todolist div:hover
+            {
+                transform: scale(1.1);
+                background-color: rgb(166, 45, 248);
+                color: black;
+                transition: 0.2s;
+            }
+        </style>
+    </head>
+<body>
+
+    <h1> ToDO App </h1>
+
+    <div id="todolist">
+        <p>
+            Enter Any Task
+            <br>
+            <input type="text" id="t1" />
+            <button onclick="addtask()" id="savebtn">Save</button>
+        </p>
+        
+
+
+    </div>
+
+    <script>
+        function addtask()
+        {
+            var data = t1.value;
+            if(data!="")
+            {
+                todolist.innerHTML += "<div> "+data+" <button class='delete' onclick='deletetask(this)' >X</button> </div>" ;
+                t1.value = "" ;
+            }
+        }
+
+        function deletetask(e)
+        {
+            e.parentElement.remove();
+        }
+
+    </script>
+</body>
+</html>
