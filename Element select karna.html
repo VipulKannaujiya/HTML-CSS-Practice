@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript DOM</title>
+    <script src="Consoletype.js"></script>
+    <style>
+        #btn{
+            margin-left: 50px;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="name">Don't Click Here</h1>
+    <button onclick="changetext()" id="btn">click mar karna</button>
+    <button onclick="alert('Abee Saale.....')" id="btn">click mar karna2</button>
+
+    <script>
+        function changetext(){
+            document.getElementById("name").style.color = "red";
+            document.getElementById("name").innerHTML = "Abee Saale......😂";
+            document.getElementById("name").style.backgroundColor = "yellow";
+        }
+        
+    </script>
+</body>
+</html>
