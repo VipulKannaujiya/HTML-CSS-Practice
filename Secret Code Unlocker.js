@@ -5,7 +5,8 @@ function discount(){
         result.style.color = "green";
         document.body.style.backgroundColor = "#c6ffc6";
     }
-    else{
+    else
+    {
         result.innerHTML = "I am Sorry🥺, Wrong Discount Code !!";
         result.style.color = "red";
         document.body.style.backgroundColor = "#ffc6c6";
