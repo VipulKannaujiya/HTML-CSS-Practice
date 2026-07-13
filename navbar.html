@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Modern Responsive Dropdown Menu</title>
+
+  <!-- ✅ Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- ✅ Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+
+    nav {
+      background-color: #111;
+    }
+
+    .menu-toggle {
+      display: none;
+      background: #e74c3c;
+      color: white;
+      padding: 14px 20px;
+      font-size: 18px;
+      border: none;
+      width: 100%;
+      text-align: left;
+      cursor: pointer;
+    }
+
+    ul.navbar {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    ul.navbar > li {
+      position: relative;
+    }
+
+    ul.navbar > li > a {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 20px;
+      color: white;
+      text-decoration: none;
+      background: #111;
+      transition: background 0.3s ease;
+    }
+
+    ul.navbar > li > a:hover {
+      background-color: #e74c3c;
+    }
+
+    li.has-submenu > a::after {
+      content: "\f0d7"; /* FontAwesome down arrow */
+      font-family: "Font Awesome 6 Free";
+      font-weight: 900;
+      margin-left: auto;
+    }
+
+    ul.submenu {
+      position: absolute;
+      background-color: #e74c3c;
+      list-style: none;
+      top: 100%;
+      left: 0;
+      min-width: 180px;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+      transition: 0.3s ease;
+      z-index: 1;
+      border-radius: 0 0 8px 8px;
+    }
+
+    ul.submenu li a {
+      display: block;
+      color: white;
+      text-decoration: none;
+      padding: 12px 16px;
+      transition: background 0.2s;
+    }
+
+    ul.submenu li a:hover {
+      background-color: #000;
+    }
+
+    li:hover > .submenu {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      ul.navbar {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+      }
+
+      ul.navbar.active {
+        display: flex;
+      }
+
+      ul.navbar > li {
+        width: 100%;
+      }
+
+      ul.navbar > li > a {
+        border-top: 1px solid #222;
+        justify-content: space-between;
+      }
+
+      ul.submenu {
+        position: static;
+        transform: none;
+        opacity: 1;
+        visibility: visible;
+        display: none;
+        border-radius: 0;
+      }
+
+      ul.submenu.active {
+        display: block;
+      }
+
+      li.has-submenu > a::after {
+        content: "\f0da"; /* Right arrow on mobile */
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <button class="menu-toggle"><i class="fas fa-bars"></i> Menu</button>
+    <ul class="navbar">
+      <li class="has-submenu">
+        <a href="#"><i class="fas fa-headset"></i> Support</a>
+        <ul class="submenu">
+          <li><a href="#"><i class="fas fa-life-ring"></i> Help Desk</a></li>
+          <li><a href="#"><i class="fas fa-comments"></i> Live Chat</a></li>
+          <li><a href="#"><i class="fas fa-book"></i> Documentation</a></li>
+        </ul>
+      </li>
+
+      <li class="has-submenu">
+        <a href="#"><i class="fas fa-paint-brush"></i> Web Design</a>
+        <ul class="submenu">
+          <li><a href="#"><i class="fas fa-pencil-alt"></i> UI/UX</a></li>
+          <li><a href="#"><i class="fas fa-image"></i> Graphics</a></li>
+          <li><a href="#"><i class="fas fa-layer-group"></i> Templates</a></li>
+        </ul>
+      </li>
+
+      <li class="has-submenu">
+        <a href="#"><i class="fas fa-cogs"></i> Content Management</a>
+        <ul class="submenu">
+          <li><a href="#"><i class="fab fa-joomla"></i> Joomla</a></li>
+          <li><a href="#"><i class="fab fa-drupal"></i> Drupal</a></li>
+          <li><a href="#"><i class="fab fa-wordpress"></i> WordPress</a></li>
+          <li><a href="#"><i class="fas fa-cube"></i> Concrete 5</a></li>
+        </ul>
+      </li>
+
+      <li class="has-submenu">
+        <a href="#"><i class="fas fa-address-book"></i> Contact</a>
+        <ul class="submenu">
+          <li><a href="#"><i class="fas fa-envelope"></i> Email</a></li>
+          <li><a href="#"><i class="fas fa-phone"></i> Phone</a></li>
+          <li><a href="#"><i class="fas fa-map-marker-alt"></i> Map</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+
+  <script>
+    // Toggle main menu
+    document.querySelector('.menu-toggle').addEventListener('click', () => {
+      document.querySelector('.navbar').classList.toggle('active');
+    });
+
+    // Toggle submenu in mobile view
+    const submenuParents = document.querySelectorAll('.has-submenu');
+
+    submenuParents.forEach(parent => {
+      parent.addEventListener('click', function (e) {
+        if (window.innerWidth <= 768) {
+          e.preventDefault();
+          const submenu = this.querySelector('.submenu');
+          submenu.classList.toggle('active');
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>

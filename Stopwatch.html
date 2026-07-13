@@ -1,0 +1,141 @@
+<html>
+    <head>
+	
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Quantico:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+	
+        <style>
+            #outer
+            {
+               width: 600px;
+               height: 100px;
+               background: rgba(0,0,0,0.2);
+               color:yellow;
+               font-size:80px;
+               text-align:center;
+               line-height: 100px;
+               margin: 0px auto;
+			   font-family: 'Quantico';
+            }
+            
+            #mybtn
+            {
+               color:white;
+               font-size:50px;
+               text-align:center;
+               line-height: 100px;
+               margin: 0px auto;
+               padding: 5px
+            }
+			body
+			{
+				background-image: url('Bgimage.png');
+			}
+			button
+			{
+				border: 8px;
+				width: 150px;
+				height: 50px;
+				background-color:rgb(255, 255, 242);
+			}
+			legend
+			{
+				color:white;
+				font-size: 30px;
+			}
+            h4
+            {
+                text-align: right;
+            }
+			
+        </style>
+    </head>
+    
+<body>
+    <fieldset>
+        <legend> Stopwatch </legend>
+        <div id="outer">
+           <span id="data1"> 00 </span>
+           <span>:</span>
+           <span id="data2"> 00 </span>
+           <span>:</span>
+           <span id="data3"> 00 </span>
+           
+        </div>
+        
+        <div id="mybtn">
+            <button onclick="status=1;startclock()" > <img src="play.png" alt="play" height="20px" width="20px"> </button>
+            <button onclick="stopclock()"> <img src="pause.png" alt="pause" height="20px" width="20px"> </button>
+            <button onclick="resetclock()"> <img src="reset.png" alt="reset" height="20px" width="20px"> </button>
+        </div>
+        </fieldset>
+        <h4>Vipul Kannaujiya</h4>
+        <script>
+            
+            var status = 1;
+            var hour = 0;
+            var minute = 0;
+            var second = 0;
+            
+            function startclock()
+            {
+  <!--alert("Hello") only for testing-->
+               
+               second++;
+               data3.innerHTML = twodigit(second);
+                 
+               if(second==60)
+               {
+                   second=0;
+                   minute++;
+                   data2.innerHTML = twodigit(minute);
+               }
+               
+               if(minute == 60)
+               {
+                   minute=0;
+                   hour++;
+                   data1.innerHTML = twodigit(hour) ;
+               }
+              
+               if(status==1)
+                {    
+                  setTimeout(startclock, 1000);
+                } 
+            }
+            
+            
+            function twodigit(num)
+            {
+                if(num<10)
+                {
+                    return "0"+num;
+                }
+                else
+                {
+                    return num;
+                }
+            }
+            
+            function stopclock()
+            {
+                status=0;
+            }
+            
+            function resetclock()
+            {
+                status=0;
+                data1.innerHTML = "00";
+                data2.innerHTML = "00";
+                data3.innerHTML = "00";
+                second = 0;
+                minute = 0;
+                hour = 0;
+            }
+            
+        </script>
+        
+</body>
+
+</html>

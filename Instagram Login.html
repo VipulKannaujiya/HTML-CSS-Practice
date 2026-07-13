@@ -1,0 +1,154 @@
+<html>
+    <head>
+        <style>
+            #box1
+            {
+                width: 100%;
+                height: 710px;
+                background-color: brown;
+            }
+            #box2
+            {
+                width: 50%;
+                height: 600px;
+                background-color: rgb(255, 255, 255);
+                float: left;
+            }
+            #box3
+            {
+                width: 50%;
+                height: 600px;
+                background-color: rgb(255, 255, 255);
+                float: left;
+            }
+            #box7
+            {
+                width: 100%;
+                height: 50px;
+                background-color: red;
+            }
+            #img1
+            {
+                margin-left: 410px;
+                margin-top: 100px;
+            }
+            #box4
+            {
+                width: 250px;
+                height: 350px;
+                background-color: white;
+                border: 1px solid rgb(205, 205, 205);
+                text-align: center;
+                margin-top: 110px;
+                margin-left: 25px;
+            }
+            #data1
+            {
+                width: 220px;
+                height: 35px;
+                background-color: #f5f5f5;
+                border: 0.5px solid gray;
+                border-radius: 5px;
+            }
+            #data2
+            {
+                width: 220px;
+                height: 35px;
+                background-color: #f5f5f5;
+                border: 0.5px solid gray;
+                border-radius: 5px;
+                margin-top: 10px;
+            }
+            #btn
+            {
+                margin-top: 10px;
+                width: 220px;
+                height: 30px;
+                border-radius: 10px;
+                border: none;
+                background-color: #42c3ff;
+                color: white;
+            }
+            .divider
+            {
+                display: flex;
+                align-items: center;
+                text-align: center;
+                font-weight: bold;
+                font-family: monospace;
+                font-size: 13px;
+                color: #aaa8a8;
+                margin-top: 10px;
+            }
+            .divider::before,.divider::after
+            {
+                content: "";
+                flex: 1;
+                border-bottom: 2px solid #dedede;
+                margin: 0 10px;
+            }
+            #img2
+            {
+                width: 20px;
+                height: 20px;
+                margin-right: 10px;
+            }
+            #fb
+            {
+                margin: 0;
+                font-family: Arial;
+                color: #3740c1;
+            }
+            #fbimg
+            {
+                margin-left: 43px;
+                margin-top: 10px;
+            }
+            #for
+            {
+                text-decoration: none;
+                color: #1c7ae5;
+            }
+        </style>
+    </head>
+<body>
+
+    <div id="box1">
+        <!--Image Div-->
+        <div id="box2">
+            <img id="img1" src="Instagram.jpeg" height="500px" width="320px"/>
+        </div>
+        <!-- Form Div-->
+        <div id="box3">
+            <!-- Login -->
+            <div id="box4">
+                <h1 style="font-family: cursive;">Instagram</h1>
+                <input id="data1" type="email number" placeholder="Phone number, username, or email"/><br/>
+                <input id="data2" type="password" placeholder="Password" /><br/>
+                <button id="btn">Log in</button><br/>
+                <div class="divider">OR</div>
+                <div id="fbimg" style="display: flex; align-items: center;">
+                <img id="img2" src="facebook.png"/>
+                <h5 id="fb">Log in with Facebook</h5>
+                </div>
+                <a id="for" href="#"><p>Forgot password?</p></a>
+            </div>
+            <!-- Sign up -->
+                <div id="box5">
+                    <h5>Don't have an account?<a href="#">Sign Up</a></h5>
+                </div>
+            <!-- Get the app. -->
+            <div id="box6">
+                <h5>Get the app. </h5><br/>
+                <img src="..." />
+                <img src="..." />
+            </div>
+            
+        </div>
+        <div id="box7">
+
+        </div>
+    </div>
+
+</body>
+</html>
