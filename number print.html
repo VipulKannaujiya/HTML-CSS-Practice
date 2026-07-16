@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Vertical 1 to 100 Table</title>
+    <style>
+        /* Yeh dibba hi saara magic karega */
+        #gridContainer {
+            display: grid;
+            /* 10 rows fix kar di */
+            grid-template-rows: repeat(10, auto); 
+            /* 10 rows bharte hi data automatic agle column me jayega */
+            grid-auto-flow: column; 
+            
+            gap: 10px;
+            max-width: 600px;
+            margin: 20px auto;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Table ke har ek cell (box) ki styling */
+        .box {
+            background-color: #b0ffb8; /* Green tint */
+            padding: 8px;
+            text-align: center;
+            border: 1px solid #7cd986;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body style="text-align: center; margin-top: 30px;">
+
+    <h2>📊 Vertical 1 to ♾️ Grid Table</h2>
+    <input type="number"id="input" placeholder="Enter your number where you want to print" style="width: 265px;"><br><br>
+    <button onclick="generateGrid()">Print Columns</button>
+
+    <div id="gridContainer"></div>
+
+    <script src="number print.js"></script>
+</body>
+</html>
